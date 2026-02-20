@@ -1,0 +1,165 @@
+/* ── FlightFinder Global Styles ── */
+:root {
+  --sky: #0ea5e9;
+  --sky-dark: #0369a1;
+  --night: #0c1a2e;
+  --gold: #f59e0b;
+  --mint: #10b981;
+  --rose: #f43f5e;
+}
+
+body {
+  background: #f0f6ff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Navbar */
+.ff-navbar {
+  background: linear-gradient(135deg, #0c1a2e 0%, #0369a1 100%);
+  box-shadow: 0 2px 20px rgba(14,165,233,0.3);
+}
+.ff-navbar .navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white !important;
+  letter-spacing: -0.5px;
+}
+.ff-navbar .nav-link {
+  color: rgba(255,255,255,0.85) !important;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.ff-navbar .nav-link:hover { color: #7dd3fc !important; }
+
+/* Hero */
+.ff-hero {
+  background: linear-gradient(135deg, rgba(12, 26, 46, 0.85) 0%, rgba(3, 105, 161, 0.7) 60%, rgba(14, 165, 233, 0.6) 100%),
+              url('https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  padding: 60px 0;
+  position: relative;
+  overflow: hidden;
+}
+.ff-hero::before {
+  content: '✈';
+  position: absolute;
+  font-size: 20rem;
+  opacity: 0.04;
+  right: -60px;
+  top: -40px;
+  color: white;
+}
+.ff-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: white;
+  line-height: 1.15;
+}
+.ff-hero p { color: rgba(255,255,255,0.75); font-size: 1.1rem; }
+
+/* Search card */
+.ff-search-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(14,165,233,0.18);
+  padding: 32px;
+  margin-top: -40px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Flight card */
+.ff-flight-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 24px;
+  margin-bottom: 16px;
+  border-left: 4px solid var(--sky);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.ff-flight-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(14,165,233,0.18);
+}
+.ff-airline-badge {
+  background: #e0f2fe;
+  color: var(--sky-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+.ff-price { color: var(--sky-dark); font-size: 1.5rem; font-weight: 800; }
+.ff-time  { font-size: 1.2rem; font-weight: 700; color: #1e293b; }
+.ff-route-line {
+  display: flex; align-items: center; gap: 8px;
+  color: #94a3b8; font-size: 0.85rem;
+}
+.ff-route-line hr { flex: 1; border-color: #cbd5e1; }
+
+/* Booking card */
+.ff-booking-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.ff-booking-ref {
+  font-family: monospace;
+  background: #f0f9ff;
+  color: var(--sky-dark);
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* Buttons */
+.btn-sky {
+  background: linear-gradient(135deg, var(--sky-dark), var(--sky));
+  color: white; border: none; border-radius: 10px;
+  font-weight: 600; padding: 10px 24px;
+  transition: opacity 0.2s, transform 0.1s;
+}
+.btn-sky:hover { opacity: 0.9; transform: translateY(-1px); color: white; }
+
+/* Form */
+.ff-input {
+  border: 2px solid #e2e8f0 !important;
+  border-radius: 10px !important;
+  padding: 12px 16px !important;
+  font-size: 0.95rem !important;
+  transition: border-color 0.2s !important;
+}
+.ff-input:focus {
+  border-color: var(--sky) !important;
+  box-shadow: 0 0 0 3px rgba(14,165,233,0.15) !important;
+}
+
+/* Stats card */
+.ff-stat-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+}
+.ff-stat-card .stat-num { font-size: 2rem; font-weight: 800; }
+.ff-stat-card .stat-label { color: #64748b; font-size: 0.85rem; margin-top: 4px; }
+
+/* Page header */
+.ff-page-header {
+  background: linear-gradient(135deg, #0c1a2e, #0369a1);
+  color: white; padding: 40px 0 20px;
+}
+
+/* Status badges */
+.badge-confirmed { background: #dcfce7; color: #166534; }
+.badge-cancelled  { background: #fee2e2; color: #991b1b; }
+.badge-paid       { background: #dbeafe; color: #1e40af; }
